@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surpresa para Mamãe</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom right, #f2e6ff, #e0b3ff);
+      color: #ff1493;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      color: #d10068;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    img {
+      max-width: 350px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    /* 🌸 Efeito de corações caindo */
+    .falling-heart {
+      position: fixed;
+      top: -50px;
+      font-size: 2em;
+      color: #ff5ca7;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Surpresa para você, Mamãe! 🎉</h1>
+  <p>Eu te amo muito, e você merece o melhor! 💖</p>
+  <img src="WhatsApp Image 2025-05-28 at 15.06.56.jpeg" alt="Flores para mamãe">
+  <p>Você é o melhor presente da minha vida. 🌷</p>
+  <p>Mãe,
+Neste dia especial, quero te lembrar do quanto você é incrível. Não há palavras suficientes para agradecer por tudo o que você fez e ainda faz por mim. Você é minha fonte de inspiração, meu apoio incondicional, e a razão do meu sorriso todos os dias. Seu amor e dedicação me mostram o verdadeiro significado da palavra "força".
+Te amo mais do que qualquer coisa, e todos os dias sou grata por ter você como minha mãe. Você merece todo o amor, felicidade e paz do mundo, hoje e sempre. Feliz aniversário, mamãe! Que seu dia seja tão maravilhoso quanto você é para mim. ❤️</p>
+
+  <button onclick="voltarPagina()">Voltar para a página principal</button>
+
+  <script>
+    // Função para voltar para a página anterior
+    function voltarPagina() {
+      window.location.href = 'index.html'; // Voltar para a página inicial
+    }
+
+    // Função para criar corações caindo na página de surpresa
+    function criarCoracoes() {
+      const heart = document.createElement("div");
+      heart.classList.add("falling-heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Gera corações continuamente
+    setInterval(criarCoracoes, 300);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feliz Aniversário, Mamãe!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom right, #ffe0f0, #ffd6ec);
+      color: #ff1493;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      color: #d10068;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .heart {
+      font-size: 2em;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    button {
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    /* 🌸 Estilo para os corações caindo */
+    .falling-heart {
+      position: fixed;
+      top: -50px;
+      font-size: 2em;
+      color: #ff5ca7;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Feliz Aniversário, Mamãe! 🎉</h1>
+  <p>Hoje é o seu dia, e eu só quero dizer o quanto você é especial. 💖</p>
+  <p class="heart">❤️ ❤️ ❤️</p>
+
+  <button onclick="mostrarSurpresa()">Clique para uma surpresa 🎁</button>
+
+  <!-- Não precisa da div de surpresa aqui mais -->
+  
+  <script>
+    // 💞 Função para criar corações caindo
+    function criarCoracoes() {
+      const heart = document.createElement("div");
+      heart.classList.add("falling-heart");
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    // Gera corações continuamente
+    setInterval(criarCoracoes, 300);
+
+    // Função de redirecionamento para a nova página
+    function mostrarSurpresa() {
+      window.location.href = 'surpresa.html'; // Aqui está o redirecionamento
+    }
+  </script>
+
+</body>
+</html>
+
